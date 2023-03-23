@@ -1,0 +1,14 @@
+Flask
+numpy
+scipy
+scikit-learn
+matplotlib
+pandas
+seaborn
+sklearn
+RandomForestClassifier
+pickle
+
+
+
+
