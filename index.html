@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>     
+       
+*{
+    margin: 0;
+    padding : 0;
+}
+body{
+    /* background:url("wp6602889-banking-wallpapers.jpg"); */
+    /* background:url("https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"); */
+    background:url("https://johnmbecker.com/wp-content/uploads/2020/11/great_loans_loansmart.jpg");
+    background-size: 100%;
+}
+div.main{
+    width: 550px;
+    margin: 0px auto 0px auto;
+}
+div.register{
+    background-color: rgba(152, 170, 168, 0.469);
+    width: 100%;
+    font-size: 20px;
+    font-style: italic;
+    border-radius: 100px;
+    border: 1px solid rgba(247, 243, 243, 0.5);
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+    color:#fff; 
+}
+form#register{
+    margin: 30px;
+}
+span{
+    padding-left: 80px;
+}
+p{
+    padding-left: 80px;
+}
+h2
+{
+    text-align: center;
+    padding: 40px;
+}
+#bt{
+    background-color: rgb(248, 162, 3);
+    color: rgb(233, 232, 232);
+    height: 40px;
+    width: 90px;
+} 
+    
+</style>
+    
+</head>
+<body>
+    <div>
+
+        <h1 style="background-color: rgba(13, 97, 169, 0.8); color:white;"><center>LOAN PREDICTION </center></h1>
+    
+</div>
+    <div class="main">
+      <div class="register">
+        <h2><center>REGISITRATION</center></h2>
+    <form class="form-horizontal" action="{{ url_for('predict')}}"method="post">
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <input  class="form-control" type= "text" name="ApplicantIncome" placeholder="Your Income" required="required" />
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <input  class="form-control" type="text" name="CoaplicantIncome" placeholder="Co-applicant(garantor)Income" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <input  class="form-control" type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <select class="form-control" type="number" name="Loan_Amount_Term" required="required">
+                <option value="0">loan term:</option>
+                <option value="240">6 months</option>
+                <option value="360">12 months</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <select class="form-control" type="number"  name="Credit_History" required="required">
+                <option value="0">Credit History:</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <select class="form-control" type="number" name="Self_Employed" required="required">
+                <option value="0">Self Employed:</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <select class="form-control" type="number" name="Property_Area" required="required">
+                <option value="0">Property_Area:</option>
+                <option value="2">urban</option>
+                <option value="1">semiurban</option>
+                <option value="0">rural</option>
+          </select>
+        </div>
+      </div>
+
+       <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <select class="form-control" type="number"  name="Married" required="required">
+                <option value="0">Married:</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <select class="form-control" type="number"  name="Education" required="required">
+                <option value="0">Education:</option>
+                <option value="1">Graduate</option>
+                <option value="0">not Graduate</option>
+          </select>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <select class="form-control" type="number"  name="Gender" required="required">
+                <option value="0">Gender:</option>
+                <option value="1">male</option>
+                <option value="0">female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <label style="padding-left: 200px;"</label>
+          <select class="form-control" type="number" name="Dependents" required="required">
+                <option value="0">Dependents:</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+                <option value="0">0</option>
+          </select>
+        </div>
+      </div>
+
+      <span style="padding-left: 200px;">
+        <input id="bt" type="submit" value="Submit">
+    </span>
+    </form>
+
+    
+
+    <h2 class="result"></h2>
+</div>
+</div>
+
+</body>
+</html>
