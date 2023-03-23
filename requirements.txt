@@ -6,7 +6,6 @@ matplotlib
 pandas
 seaborn
 sklearn
-RandomForestClassifier
 pickle
 
 
